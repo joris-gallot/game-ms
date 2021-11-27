@@ -20,7 +20,9 @@ async function bootstrap() {
   );
   app.listen();
 
-  (await NestFactory.create(AppModule)).listen(process.env.PORT);
+  (await NestFactory.create(AppModule, { cors: true })).listen(
+    process.env.PORT,
+  );
 }
 
 bootstrap();
